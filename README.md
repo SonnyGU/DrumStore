@@ -17,6 +17,21 @@ Line #: changes
 
 D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
 
+File: about.HTML
+Line #: changes
+
+ 1-38: Added a new html file under templates name about.HTML, I set up a basic page with a title and paragraphs using thymeleaf
+ 34: I added a button that leads back to the mainscreen labeled Back to Home
+
+ File: AboutController.JAVA
+1-13: I added a controller class called AboutController under controllers,
+6: i added the annotation to mark it as  controller @controller
+9: mapped the about.html by using @getmapping(/about)
+20-13: made a method that returns the about page.
+
+
+
+
 
 E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
 
