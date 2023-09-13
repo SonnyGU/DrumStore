@@ -51,8 +51,34 @@ Line #: changes
 
 
 F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
+•   The “Buy Now” button must be next to the buttons that update and delete products.
 
+•   The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.
 
+•   Display a message that indicates the success or failure of a purchase
+
+File: BuyPartController.java
+Line #: changes
+
+1 -43: Added a Controller to that handles the buyNow request for a part and decrements the inventory
+
+File: BuyProductController.java
+
+1-41: Added a Controller to that handles the buyNow request for a product and decrements the inventory.
+
+File: PartMessages.java
+
+1-38: Added a class to handle the messages to the user after hitting the buyNow button on a part.
+
+File: ProductMessages.JAVA
+
+1-40: Added a class to handle the messages to the user after hitting the buyNow button on a product.
+
+File: mainscreen.html
+
+51-61: Added the HTML for the button buy now for parts and added an if that would print the message after button buy now is pressed.
+
+99-110: Added the button for the products and added and if that would print the message after the button buy now is pressed.
 
 G. Modify the parts to track maximum and minimum inventory by doing the following:
 
