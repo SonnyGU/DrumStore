@@ -33,7 +33,18 @@ Line #: changes
 
 
 
+
 E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
+
+File: BootStrapData.JAVA
+Line #: changes
+
+59: Added an If statement that checks the count of productRepository and partRepository to makes sure they are zero
+61 - 105: added the 5 new objects of parts
+107: Fetching all OutsourcedPart instances from the outsourcedPartRepository.
+108 -116: Iterating through each part and checking if its name is matches the case then sets thePart# equal to Part
+118 - 122: makes a new Product from the product class
+124 -133: saving 5 outsourceParts and Products to their respective repositories.
 
 
 
