@@ -17,7 +17,22 @@ public class InventoryValidator implements ConstraintValidator<ValidInventory, P
             return true;
         }
 
-        return part.getInv() >= part.getMinInv() && part.getInv() <= part.getMaxInv();
+        if (part.getInv() - 1 < part.getMinInv()) {
+            context.disableDefaultConstraintViolation();
+            context.buildConstraintViolationWithTemplate("Inventory is less than the allowed minimum.")
+                    .addPropertyNode("inv")
+                    .addConstraintViolation();
+            return false;
+        }
 
+        if (part.getInv() > part.getMaxInv()) {
+            context.disableDefaultConstraintViolation();
+            context.buildConstraintViolationWithTemplate("Inventory exceeds the allowed maximum.")
+                    .addPropertyNode("inv")
+                    .addConstraintViolation();
+            return false;
+        }
+
+        return true;
     }
 }
