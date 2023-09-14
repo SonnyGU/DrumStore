@@ -124,13 +124,20 @@ file7: ValidInventory.JAVA
 
 
 
-
-
-
-
-
-
 H. Add validation for between or at the maximum and minimum fields. The validation must include the following:
+
+Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.
+
+•   Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.
+
+•   Display error messages when adding and updating parts if the inventory is greater than the maximum.
+
+File: InventoryValidator.JAVA
+Line #s: changes
+
+20-26: the logic checks if decrementing the current inventory by one would make it less than the allowed min. if true it customizes the validation error to show that the inventory would drop below allowed min and returns false to indicate validation failed.
+
+28-36:checks current inventory exceeds the allowed max. if true the validation error message sent to indicate the inventory is over max and returns false for validation failed.
 
 
 
