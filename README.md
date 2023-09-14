@@ -143,5 +143,14 @@ Line #s: changes
 
 I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
 
+file: PartTest.JAVA
+Line #s: changes
+
+34-35: added a validator instance to be used during testing
+
+37-48, 50-60 : set up a test for both max and min inv that checks for both the outsource and insource confirming that if the inv is higher or lower than it expects it will trigger an error
+
 
 J.  Remove the class files for any unused validators in order to clean your code.
+
+Line #s: changes

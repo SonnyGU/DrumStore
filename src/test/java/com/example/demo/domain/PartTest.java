@@ -3,10 +3,14 @@ package com.example.demo.domain;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
 import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 /**
  * Project: demoDarbyFrameworks2-master
@@ -22,10 +26,37 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class PartTest {
     Part partIn;
     Part partOut;
+    private Validator validator;
     @BeforeEach
     void setUp() {
         partIn=new InhousePart();
         partOut=new OutsourcedPart();
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        validator = factory.getValidator();
+    }
+
+    @Test
+    void testInvMin(){
+        //will handle testing the inv when set below min
+        partIn.setMinInv(1);
+        partIn.setInv(0);
+        assertFalse(validator.validate(partIn).isEmpty(), "Error in validation due to inventory less than minimum");
+
+        partOut.setMinInv(1);
+        partOut.setInv(0);
+        assertFalse(validator.validate(partOut).isEmpty(), "Error in validation due to Inventory less than minimum");
+    }
+
+    @Test
+    void testInvMax(){
+        // will handle the other side of it by checking when inv is over max
+        partIn.setMaxInv(10);
+        partIn.setInv(12);
+        assertFalse(validator.validate(partIn).isEmpty(), "Error in validation due to inventory exceeding maximum allowed");
+
+        partOut.setMaxInv(10);
+        partOut.setInv(12);
+        assertFalse(validator.validate(partOut).isEmpty(), "Error in validation due to inventory exceeding maximum allowed");
     }
     @Test
     void getId() {
