@@ -81,6 +81,51 @@ File: mainscreen.html
 99-110: Added the button for the products and added and if that would print the message after the button buy now is pressed.
 
 G. Modify the parts to track maximum and minimum inventory by doing the following:
+Add additional fields to the part entity for maximum and minimum inventory.
+
+•   Modify the sample inventory to include the maximum and minimum fields.
+
+•   Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values.
+
+•   Rename the file the persistent storage is saved to.
+
+•   Modify the code to enforce that the inventory is between or at the minimum and maximum value.
+
+File1: BootStrapData
+Line#s: changes
+
+67-68, 78-79, 89-90, 100-101, 112-113 : Setting the minimum inventory to 0 and maximum inventory to 10 for objects.
+
+File2: application.properties
+
+Line 6: update h2 file names
+
+file3: InhousePartForm.HTML
+
+21-22:Adding an input field for inventory and displaying errors if there are any issues with the provided inventory value
+
+File4: InventoryValidator.JAVA
+
+1-23:Validator to ensure a part's inventory is within the specified minimum and maximum limits
+
+File5: OutsourcePartForm.HTML
+
+24-29: Input fields for setting and validating the minimum and maximum inventory values with error messages.
+
+File6: Part.JAVA
+
+24 : Custom validation for ensuring inventory is within the specified minimum and maximum limits using @ValidInventory
+
+33, 35-38, 62-86 :Constructor and getters/setters for handling minimum and maximum inventory
+
+file7: ValidInventory.JAVA
+
+1-15: Defines @ValidInventory annotation for custom inventory range validation
+
+
+
+
+
 
 
 
