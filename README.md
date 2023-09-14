@@ -153,4 +153,7 @@ Line #s: changes
 
 J.  Remove the class files for any unused validators in order to clean your code.
 
+File: DeletePartValidator.java
 Line #s: changes
+
+1-27: Deleted the class after ensuring it was not used anywhere else.
