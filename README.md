@@ -107,19 +107,33 @@ file3: InhousePartForm.HTML
 (after revision)
 23-28: adds field to set maxInv and minInv that was missing when project was submitted.
 
+(After revision 2)
+24, 27: removed the Max = 10
+
 File4: InventoryValidator.JAVA
 
 1-23:Validator to ensure a part's inventory is within the specified minimum and maximum limits
 
+(After Revision 2)
+35-41: add logic to make sure that minInv cannot be greater than Maxinv
+
 File5: OutsourcePartForm.HTML
 
 24-29: Input fields for setting and validating the minimum and maximum inventory values with error messages.
+
+(After Revision 2)
+25, 28: removed max = 10
 
 File6: Part.JAVA
 
 24 : Custom validation for ensuring inventory is within the specified minimum and maximum limits using @ValidInventory
 
 33, 35-38, 62-86 :Constructor and getters/setters for handling minimum and maximum inventory
+
+(After revision 2)
+33: removed @Max value = 10
+
+34: add a @min
 
 file7: ValidInventory.JAVA
 

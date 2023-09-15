@@ -30,9 +30,8 @@ public abstract class Part implements Serializable {
     @Min(value = 0, message = "Price value must be positive")
     double price;
     @Min(value = 0, message = "Inventory value must be positive")
-    @Max(value = 10, message = "This exceeds the allowed amount of 10")
     int inv;
-    @Max(value = 10, message = "This exceeds the allowed amount of 10")
+    @Min(value = 0, message = "Inventory maximum limit must be positive")
     int maxInv;
     @Min(value = 0, message = "Inventory value must be positive")
     int minInv;
