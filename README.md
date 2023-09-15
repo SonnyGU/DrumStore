@@ -104,6 +104,9 @@ file3: InhousePartForm.HTML
 
 21-22:Adding an input field for inventory and displaying errors if there are any issues with the provided inventory value
 
+(after revision)
+23-28: adds field to set maxInv and minInv that was missing when project was submitted.
+
 File4: InventoryValidator.JAVA
 
 1-23:Validator to ensure a part's inventory is within the specified minimum and maximum limits
@@ -121,6 +124,8 @@ File6: Part.JAVA
 file7: ValidInventory.JAVA
 
 1-15: Defines @ValidInventory annotation for custom inventory range validation
+
+
 
 
 
