@@ -95,7 +95,7 @@ public class BootStrapData implements CommandLineRunner {
             o4.setCompanyName("Echo Edge Drums");
             o4.setName("Drum Shell");
             o4.setInv(2);
-            o4.setPrice(100.0);
+            o4.setPrice(1);
             o4.setId(400L);
             o4.setMinInv(0);
             o4.setMaxInv(10);
